@@ -128,7 +128,7 @@ config.macos_window_background_blur = 20 -- Adjust this value as needed
 config.win32_system_backdrop = "Acrylic" -- Only Works in Windows
 
 -- Font Size
-config.font_size = 16.0
+config.font_size = 14.0
 
 -- Smooth hack
 config.max_fps = 240

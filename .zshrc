@@ -27,6 +27,8 @@ plugins=(
 	sudo
 	aws
 	command-not-found
+  gradle
+  sdk
 )
 
 source $ZSH/oh-my-zsh.sh

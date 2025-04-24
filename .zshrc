@@ -6,7 +6,6 @@ export NAS="$HOME/Documents/Nas"
 export SCRIPTS="$NAS/Personal/scripts"
 
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$SCRIPTS"
 export BROWSER="zen"
 

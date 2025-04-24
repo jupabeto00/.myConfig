@@ -1,0 +1,117 @@
+" UI/UX
+set scrolloff=8
+set autoindent
+set number
+set relativenumber
+set showcmd
+set showmode
+
+" search
+set hlsearch
+set incsearch
+set smartcase
+
+" Clipboard
+set clipboard+=unnamed
+
+let mapleader=" "
+let g:mapleader=" "
+
+" Better Esc
+imap jj <ESC>
+
+" find
+nmap <leader>sa <Action>(SearchEverywhere)
+nmap <leader>sg <Action>(TextSearchAction)
+nmap <leader>sr <Action>(ReplaceInPath)
+
+nmap <leader>fa <Action>(GotoAction)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>fw <Action>(FindInPath)
+nmap <leader>fb <Action>(Switcher)
+nmap <leader>fc <Action>(ShowSettings)
+
+" Config file shortcuts
+" Config file shortcuts
+map <Leader>src <Action>(IdeaVim.ReloadVimRc.reload)
+map <Leader>grc :e ~/.ideavimrc<CR>
+map <Leader>src <Action>(IdeaVim.ReloadVimRc.reload)
+map <Leader>grc :e ~/.ideavimrc<CR>
+
+" code jump
+nmap gD <Action>(GotoSuperMethod)
+nmap gd <Action>(GotoDeclaration)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(FindUsages)
+
+" move on panels
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" move on editors
+nmap <S-h> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+
+" delete editors
+nmap <leader>bd <Action>(CloseEditor)
+nmap <leader>bD <Action>(CloseAllEditors)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
+
+
+" splits
+map <leader>- <Action>(MoveTabRight)
+map <leader>ws <Action>(MoveTabDown)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+map <leader>wd <Action>(Unsplit)
+
+" Save
+map <C-s> <Action>(SaveAll)
+
+" Move lines
+nmap <C-S-j> <Action>(MoveLineDown)
+vmap <C-S-j> <Action>(MoveLineDown)
+vmap <C-S-k> <Action>(MoveLineUp)
+nmap <C-S-k> <Action>(MoveLineUp)
+
+" Folding
+map zf <Action>(ExpandCollapseToggleAction)
+map za <Action>(CollapseAllRegions)
+map zA <Action>(ExpandAllRegions)
+xmap zs <Action>(CollapseSelection)<ESC>
+
+" Editor
+nmap <leader>co <Action>(OptimizeImports)
+nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>cR <Action>(RenameFile)
+nmap <leader>ca <Action>(Generate)
+nmap <leader>cs <Action>(FileStructurePopup)
+nmap <leader>ci <Action>(ImplementMethods)
+nmap <leader>cD <Action>(ActivateProblemsViewToolWindow)
+vmap <leader>cs <Action>(SurroundWith)
+
+" Comments
+vmap gcc <Action>(CommentByBlockComment)
+nmap gcc <Action>(CommentByLineComment)
+
+" Clear search highlights
+nmap <C-d> :nohlsearch<CR>
+
+" Close Tools windows
+map q <Action>(HideActiveWindow)
+
+" Git
+map <leader>gf <Action>(Git.Fetch)
+map <leader>gco <Action>(GitCheckoutFromInputAction)
+map <leader>gb <Action>(Git.Branches)
+
+" Config file shortcuts
+map <leader>vs <Action>(IdeaVim.ReloadVimRc.reload)
+map <leader>vc :e ~/.ideavimrc<CR>
+
+" Explorer
+nmap - <Action>(ActivateProjectToolWindow)

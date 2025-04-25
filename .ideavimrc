@@ -1,6 +1,10 @@
+" Plugins
+set highlightedyank
+let g:highlightedyank_highlight_duration = 200
+set NERDTree
+
 " UI/UX
 set scrolloff=8
-set autoindent
 set number
 set relativenumber
 set showcmd
@@ -19,6 +23,8 @@ let g:mapleader=" "
 
 " Better Esc
 imap jj <ESC>
+nmap <leader>a ggVG
+nmap s <Action>(flash.search)
 
 " find
 nmap <leader>sa <Action>(SearchEverywhere)
@@ -99,13 +105,17 @@ vmap gcc <Action>(CommentByBlockComment)
 nmap gcc <Action>(CommentByLineComment)
 
 " Clear search highlights
-nmap <C-d> :nohlsearch<CR>
+nmap <C-a> :nohlsearch<CR>
 
 " Close Tools windows
 map q <Action>(HideActiveWindow)
 
 " Git
 map <leader>gf <Action>(Git.Fetch)
+map <leader>gc <Action>(CheckinProject)
+map <leader>gg <Action>(VcsGroups)
+map <leader>gG <Action>(ActivateVersionControlToolWindow)
+map <leader>gp <Action>(Git.Pull)
 map <leader>gco <Action>(GitCheckoutFromInputAction)
 map <leader>gb <Action>(Git.Branches)
 
@@ -115,3 +125,26 @@ map <leader>vc :e ~/.ideavimrc<CR>
 
 " Explorer
 nmap - <Action>(ActivateProjectToolWindow)
+
+" Run
+nmap <leader>r <Action>(ChooseRunConfiguration)
+
+" Debug
+nmap <leader>dr <Action>(ChooseDebugConfiguration)
+nmap <leader>dl <Action>(ViewBreakpoints)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>dB <Action>(BreakpointActionsGroup)
+nmap <leader>da <Action>(DebuggingActionsGroup)
+nmap <f10> <Action>(Stop)
+
+" Bookmarks
+nmap <leader>kk <Action>(Bookmarks)
+nmap <leader>kb <Action>(ToggleBookmark)
+nmap <leader>kl <Action>(ShowBookmarks)
+nmap <leader>kB <Action>(ToggleBookmarkWithMnemonic)
+
+nmap <leader>k1 <Action>(GotoBookmark1)
+nmap <leader>k2 <Action>(GotoBookmark2)
+nmap <leader>k3 <Action>(GotoBookmark3)
+nmap <leader>k4 <Action>(GotoBookmark4)
+nmap <leader>k5 <Action>(GotoBookmark5)

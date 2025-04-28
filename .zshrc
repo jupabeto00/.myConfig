@@ -7,20 +7,18 @@ export SCRIPTS="$NAS/Personal/scripts"
 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:$SCRIPTS"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:$HOME/.atuin/bin"
 export BROWSER="zen"
-
-export LS_COLORS="di=38;5;67:ow=48;5;60:ex=38;5;132:ln=38;5;144:*.tar=38;5;180:*.zip=38;5;180:*.jpg=38;5;175:*.png=38;5;175:*.mp3=38;5;175:*.wav=38;5;175:*.txt=38;5;223:*.sh=38;5;132"
-if [[ "$(uname)" == "Darwin" ]]; then
-  alias ls='ls --color=auto'
-else
-  alias ls='gls --color=auto'
-fi
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exlude .git"
 
 # alias
+if grep -qi "debian" /etc/os-release; then
+    alias fd='fdfind'
+fi
 alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
 alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
 alias config='/usr/bin/git --git-dir=$HOME/.myConfig/ --work-tree=$HOME'
@@ -41,6 +39,7 @@ plugins=(
   sdk
 )
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ZSH/oh-my-zsh.sh
 
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
@@ -62,3 +61,4 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+

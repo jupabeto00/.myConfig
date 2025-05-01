@@ -27,7 +27,6 @@ nmap <leader>a ggVG
 nmap s <Action>(flash.search)
 
 " find
-nmap <leader>sa <Action>(SearchEverywhere)
 nmap <leader>sg <Action>(TextSearchAction)
 nmap <leader>sr <Action>(ReplaceInPath)
 
@@ -37,13 +36,6 @@ nmap <leader>fr <Action>(RecentFiles)
 nmap <leader>fw <Action>(FindInPath)
 nmap <leader>fb <Action>(Switcher)
 nmap <leader>fc <Action>(ShowSettings)
-
-" Config file shortcuts
-" Config file shortcuts
-map <Leader>src <Action>(IdeaVim.ReloadVimRc.reload)
-map <Leader>grc :e ~/.ideavimrc<CR>
-map <Leader>src <Action>(IdeaVim.ReloadVimRc.reload)
-map <Leader>grc :e ~/.ideavimrc<CR>
 
 " code jump
 nmap gD <Action>(GotoSuperMethod)

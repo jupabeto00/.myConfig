@@ -16,16 +16,10 @@ export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exlude .git"
 
 # alias
-if grep -qi "debian" /etc/os-release; then
-    alias fd='fdfind'
-fi
+alias fd='fdfind'
 alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
 alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
 alias config='/usr/bin/git --git-dir=$HOME/.myConfig/ --work-tree=$HOME'
-
-# Alias for Yoint
-alias y-dev='export ENV_PROFILE=dev && direnv reload'
-alias y-pre-dev='export ENV_PROFILE=predev && direnv reload'
 
 plugins=(
 	git
@@ -51,7 +45,7 @@ eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
 eval "$(luarocks path --bin)"
-eval $(keychain --quiet --eval ~/.ssh/github_personal_rsa)
+eval $(keychain --quiet --eval ~/.ssh/github_rsa)
 eval "$(direnv hook zsh)"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:$SCRIPTS"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:$HOME/.atuin/bin"
-export BROWSER="zen"
+export BROWSER=""
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -20,6 +20,7 @@ alias fd='fdfind'
 alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
 alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
 alias config='/usr/bin/git --git-dir=$HOME/.myConfig/ --work-tree=$HOME'
+alias screen='grim -g "$(slurp)" - | swappy -f -'
 
 plugins=(
 	git
@@ -31,6 +32,7 @@ plugins=(
 	command-not-found
   gradle
   sdk
+  nvm
 )
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

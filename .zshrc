@@ -32,7 +32,7 @@ plugins=(
 	command-not-found
   gradle
   sdk
-  nvm
+  extract
 )
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

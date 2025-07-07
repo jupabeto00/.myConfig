@@ -16,7 +16,7 @@ export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exlude .git"
 
 # alias
-alias fd='fdfind'
+# alias fd='fdfind'
 alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
 alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
 alias config='/usr/bin/git --git-dir=$HOME/.myConfig/ --work-tree=$HOME'

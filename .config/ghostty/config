@@ -39,9 +39,6 @@ unfocused-split-opacity = 0.3
 # Shell
 shell-integration = zsh
 
-keybind = alt+left=unbind
-keybind = alt+right=unbind
-
 ### KeyBindings
 # Toggle commands
 keybind = alt+z=toggle_split_zoom
@@ -67,3 +64,10 @@ keybind = cmd+k=clear_screen
 
 # Use it by writing 'nvim' first and then the keybinding to open the file with nvim
 keybind = alt+s=write_screen_file:paste
+
+# Disabled keymaps
+keybind = ctrl+shift+n=unbind
+keybind = ctrl+b=unbind
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+

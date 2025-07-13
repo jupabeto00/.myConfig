@@ -15,12 +15,9 @@ export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exlude .git"
 
-# alias
-# alias fd='fdfind'
-alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
-alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
-alias config='/usr/bin/git --git-dir=$HOME/.myConfig/ --work-tree=$HOME'
-alias screen='grim -g "$(slurp)" - | swappy -f -'
+# Telemetry config
+# export OTEL_SERVICE_NAME="gemini"
+# export OTEL_EXPORTER_OTLP_TRACES_ENDPOINT="http://192.168.1.120:4318/v1/traces"
 
 plugins=(
 	git
@@ -37,6 +34,16 @@ plugins=(
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ZSH/oh-my-zsh.sh
+
+# alias
+# alias fd='fdfind'
+alias ls="lsd"
+alias la="lsd -la"
+alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
+alias fzfnvim='nvim $(fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
+alias config='/usr/bin/git --git-dir=$HOME/.myConfig/ --work-tree=$HOME'
+alias screen='grim -g "$(slurp)" - | swappy -f -'
+alias vpn='sudo openvpn --config $HOME/Documents/Nas/Novatec/juan.bernal-config.ovpn'
 
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'

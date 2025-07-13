@@ -25,7 +25,7 @@ selection-foreground = #c9c7cd
 
 # Fonts
 font-family = IosevkaTerm NF
-font-size = 13
+font-size = 14
 
 # Windows 
 window-step-resize = true

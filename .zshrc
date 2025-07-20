@@ -9,7 +9,6 @@ if [ ! -f $HOME/.zi/bin/zi.zsh ]; then
     print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 source "$HOME/.zi/bin/zi.zsh"
-fastfetch
 
 # ========================
 # COMPLETIONS
@@ -17,6 +16,7 @@ fastfetch
 autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 zicompinit
+fastfetch
 
 # ========================
 # PLUGINS
@@ -26,21 +26,21 @@ zi light zsh-users/zsh-syntax-highlighting
 zi light marlonrichert/zsh-autocomplete
 
 # ========================
+# EXTERNAL PLUGINS
+# ========================
+zi ice wait lucid pick'autopair.zsh'
+zi load hlissner/zsh-autopair
+
+zi ice has'zoxide' wait lucid
+zi light z-shell/zsh-zoxide
+
+# ========================
 # SNIPPETS
 # ========================
 zi snippet OMZP::git
 zi snippet OMZP::command-not-found
 zi snippet OMZP::sudo
 zi snippet OMZP::extract
-
-# ========================
-# EXTERNAL PLUGINS
-# ========================
-zi ice wait lucid pick'autopair.zsh'
-zi load hlissner/zsh-autopair
-
-zi has'zoxide' light-mode for \
-  z-shell/zsh-zoxide
 
 # ========================
 # PROGRAMS

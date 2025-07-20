@@ -2,7 +2,7 @@ theme = material
 font-family = "Geist Mono"
 # font-size = 12
 window-decoration = true
-command = fish
+command = zsh 
 window-padding-balance = true
 window-padding-x = 10
 window-padding-y = 10
@@ -19,15 +19,9 @@ keybind = ctrl+shift+z=toggle_split_zoom
 
 # Splits
 keybind = alt+w=new_split:up
-keybind = alt+s=new_split:down
+keybind = alt+v=new_split:down
 keybind = alt+d=new_split:right
 keybind = alt+a=new_split:left
-
-# Tabs
-keybind = ctrl+shift+n=new_tab
-
-# Windows
-keybind = ctrl+alt+n=new_window
 
 # Resize Split
 keybind = ctrl+shift+j=resize_split:up,10

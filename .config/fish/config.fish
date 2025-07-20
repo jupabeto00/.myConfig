@@ -19,7 +19,6 @@ if status is-interactive
 
     # Ensure required plugins are installed
     set required_plugins jorgebucaran/nvm.fish edc/bass kenji-miyake/reload.fish
-
     for plugin in $required_plugins
         if not fisher list | grep -q $plugin
             echo "Installing missing fisher plugin: $plugin"
@@ -39,6 +38,12 @@ if status is-interactive
     end
 end
 
+set -gx PATH $HOME/.npm-global/bin $PATH
+# set -g __sdkman_custom_dir $HOME/.sdkman
+set -gx ANDROID_HOME /home/juan/Android/Sdk
+set -gx SDKMAN_DIR $HOME/.sdkman
+set -gx JAVA_HOME $SDKMAN_DIR/candidates/java/current
+
 # Your aliases here
 alias pamcan=pacman
 alias settings="gjs ~/.config/ags/assets/settings.js"
@@ -48,14 +53,9 @@ alias config="nvim ~/.ags/config.json"
 alias default="micro ~/.config/ags/modules/.configuration/user_options.default.json"
 alias colors="kitty @ set-colors -a -c ~/.cache/ags/user/generated/kitty-colors.conf"
 alias cfg="git --git-dir=$HOME/.myConfig/ --work-tree=$HOME"
+alias vpn="sudo openvpn --config $HOME/Documents/Nas/Novatec/juan.bernal-config.ovpn"
 
 # AutoStarts
 keychain --quiet ~/.ssh/github_rsa
 source ~/.keychain/(hostname)-fish
 zoxide init fish | source
-
-# SDKMAN
-set -gx SDKMAN_DIR $HOME/.sdkman
-if test -s "$HOME/.sdkman/bin/sdkman-init.sh"
-    bass source "$HOME/.sdkman/bin/sdkman-init.sh"
-end

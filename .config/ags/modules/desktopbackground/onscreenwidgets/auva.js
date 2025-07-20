@@ -202,7 +202,7 @@ export default () =>
     hpack: "start",
     vpack: "start",
     vertical: true,
-    css: `margin: 0 0 2.5rem 3rem`,
+    css: `margin: 30px 0 2.5rem 3rem;`,
     spacing: 35,
     children: [Time(), resources],
   });

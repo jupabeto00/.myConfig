@@ -90,6 +90,8 @@ alias cfgst='cfg status'
 alias cfgc='cfg commit -m'
 alias cfgp='cfg push origin HEAD'
 alias cfgl='cfg pull origin HEAD'
+alias cfgfa='cfg fetch --all'
+alias cfgrf='cfg fetch origin && cfg reset --hard origin/$(cfg rev-parse --abbrev-ref HEAD)'
 
 # Keychain para ssh-agent
 eval "$(keychain --quiet --eval ~/.ssh/github_rsa)"

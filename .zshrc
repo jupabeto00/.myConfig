@@ -88,10 +88,7 @@ alias cfgaa='cfg add -u'
 alias cfgrm='cfg rm --cached -r'
 alias cfgst='cfg status'
 alias cfgc='cfg commit -m'
-alias cfgp='cfg push origin HEAD'
-alias cfgl='cfg pull origin HEAD'
 alias cfgfa='cfg fetch --all'
-alias cfgrf='cfg fetch origin && cfg reset --hard origin/$(cfg rev-parse --abbrev-ref HEAD)'
 
 # Keychain para ssh-agent
 eval "$(keychain --quiet --eval ~/.ssh/github_rsa)"
@@ -99,3 +96,32 @@ eval "$(keychain --quiet --eval ~/.ssh/github_rsa)"
 eval "$(luarocks path --bin)"
 # Atuin Start
 eval "$(atuin init zsh)"
+
+
+# ========================
+# FUNCTIONS
+# ========================
+
+# GIT BARE
+cfgp() {
+  branch=$(cfg rev-parse --abbrev-ref HEAD)
+  echo "Push to branch: " $branch
+  cfg push origin $branch
+}
+
+cfgl() {
+  branch=$(cfg rev-parse --abbrev-ref HEAD)
+  echo "Pull to branch: " $branch
+  cfg pull origin $branch 
+}
+
+cfgfl(){
+  echo "⚠️ This will hard reset your working tree to match the remote branch and discard all local changes."
+  read -p "Are you sure? (y/N): " confirm
+  if [[ $confirm == [yY] ]]; then
+    cfg fetch origin && \
+    cfg reset --hard origin/$(cfg rev-parse --abbrev-ref HEAD)
+  else
+    echo "Aborted."
+  fi
+}

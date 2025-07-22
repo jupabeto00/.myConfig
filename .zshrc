@@ -11,6 +11,13 @@ fi
 source "$HOME/.zi/bin/zi.zsh"
 
 # ========================
+# ANEXXES
+# ========================
+zi light-mode for \
+  z-shell/z-a-meta-plugins \
+  @annexes
+
+# ========================
 # COMPLETIONS
 # ========================
 autoload -Uz _zi

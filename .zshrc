@@ -11,13 +11,6 @@ fi
 source "$HOME/.zi/bin/zi.zsh"
 
 # ========================
-# ANEXXES
-# ========================
-zi light-mode for \
-  z-shell/z-a-meta-plugins \
-  @annexes
-
-# ========================
 # COMPLETIONS
 # ========================
 autoload -Uz _zi
@@ -63,11 +56,6 @@ zi ice as'program' pick'$ZPFX/sdkman/bin/sdk' id-as'sdkman' run-atpull nocompile
   atpull'SDKMAN_DIR=$ZPFX/sdkman sdk selfupdate' \
   atinit'export SDKMAN_DIR=$ZPFX/sdkman; source $ZPFX/sdkman/bin/sdkman-init.sh'
 zi light z-shell/0
-
-zi ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
-  atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
-  as'program' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
-zi light pyenv/pyenv
 
 zi ice wait lucid
 zi light lukechilds/zsh-nvm
